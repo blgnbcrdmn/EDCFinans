@@ -1,0 +1,64 @@
+﻿@model IEnumerable<EDCFinans.Models.Finans.GelirGider>
+
+@{
+    ViewData["Title"] = "GelirGider_Listeleme";
+}
+
+<h1>GelirGider_Listeleme</h1>
+
+<p>
+    <a asp-action="GelirGider_Ekle">Yeni Kayıt</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GelirGiderTurId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FaturaId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Durum)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GelirGiderTurId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FaturaId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Aciklama)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Durum)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "GelirGider_Duzenle", new {  id=item.Id }) |
+                @Html.ActionLink("Durum Değiştir", "GelirGider_DurumDegistir", new {  id=item.Id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

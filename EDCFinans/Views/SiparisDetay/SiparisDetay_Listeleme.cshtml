@@ -1,0 +1,51 @@
+﻿@model IEnumerable<EDCFinans.Models.Finans.SiparisDetay>
+
+@{
+    ViewData["Title"] = "SiparisDetay_Listeleme";
+}
+
+<h1>SiparisDetay_Listeleme</h1>
+
+<p>
+    <a asp-action="SiparisDetay_Ekle">Yeni Kayıt</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SiparisId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UrunDetayId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adet)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SiparisId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UrunDetayId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adet)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "SiparisDetay_Duzenle", new {  id=item.Id  }) |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

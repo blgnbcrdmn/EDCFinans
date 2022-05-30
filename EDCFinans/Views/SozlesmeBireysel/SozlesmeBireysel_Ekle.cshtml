@@ -1,0 +1,101 @@
+﻿@model EDCFinans.Models.Sozlesme.SozlesmeBireysel
+
+@{
+    ViewData["Title"] = "SozlesmeBireysel_Ekle";
+}
+
+<h1>SozlesmeBireysel_Ekle</h1>
+
+<h4>SozlesmeBireysel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SozlesmeBireysel_Ekle">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ad" class="control-label"></label>
+                <input asp-for="Ad" class="form-control" />
+                <span asp-validation-for="Ad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SozlesmeNo" class="control-label"></label>
+                <input asp-for="SozlesmeNo" class="form-control" />
+                <span asp-validation-for="SozlesmeNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SirketId" class="control-label"></label>
+                <select asp-for="SirketId" class="form-control">
+                    <option value="value">text</option>
+                </select>
+                <span asp-validation-for="SirketId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YukleniciKisiId" class="control-label"></label>
+                <select asp-for="YukleniciKisiId" class="form-control">
+                    <option value="value">text</option>
+                </select>
+                <span asp-validation-for="YukleniciKisiId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SozlemeTurId" class="control-label"></label>
+                <select asp-for="SozlemeTurId" class="form-control">
+                    <option value="value">text</option>
+                </select>
+                <span asp-validation-for="SozlemeTurId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SozlesmeDurumId" class="control-label"></label>
+                <select asp-for="SozlesmeDurumId" class="form-control">
+                    <option value="value">text</option>
+                </select>
+                <span asp-validation-for="SozlesmeDurumId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaddeId" class="control-label"></label>
+                <input type="checkbox" name="name" value="" />
+                <span asp-validation-for="MaddeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImzaTarihi" class="control-label"></label>
+                <input asp-for="ImzaTarihi" class="form-control" />
+                <span asp-validation-for="ImzaTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BaslamaTarih" class="control-label"></label>
+                <input asp-for="BaslamaTarih" class="form-control" />
+                <span asp-validation-for="BaslamaTarih" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BitisTarih" class="control-label"></label>
+                <input asp-for="BitisTarih" class="form-control" />
+                <span asp-validation-for="BitisTarih" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Aciklama" class="control-label"></label>
+                <input asp-for="Aciklama" class="form-control" />
+                <span asp-validation-for="Aciklama" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="durum" /> @Html.DisplayNameFor(model => model.durum)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

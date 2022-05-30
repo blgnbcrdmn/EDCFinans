@@ -1,0 +1,45 @@
+﻿@model IEnumerable<EDCFinans.Models.Finans.Ulke>
+
+@{
+    ViewData["Title"] = "Ulke_Listeleme";
+}
+
+<h1>Ulke_Listeleme</h1>
+
+<p>
+    <a asp-action="Ulke_Ekle">Yeni Kayıt</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Durum)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Durum)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "Ulke_Duzenle", new {  id=item.Id }) |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

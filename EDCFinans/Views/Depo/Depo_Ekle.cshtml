@@ -1,0 +1,65 @@
+﻿@model EDCFinans.Models.Finans.Depo
+@inject EDCFinans.Models.Provider.IEDCFinansServiceProvider  serviceProvider
+@{
+    ViewData["Title"] = "Depo_Ekle";
+   var sehirler = new SelectList(await serviceProvider.SehirListele(), "Id", "Ad");
+    var sirketler = new SelectList(await serviceProvider.SirketListele(), "Id", "Ad");
+}
+
+
+<h1>Depo_Ekle</h1>
+
+<h4>Depo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Depo_Ekle">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Ad" class="control-label"></label>
+                <input asp-for="Ad" class="form-control" />
+                <span asp-validation-for="Ad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adres" class="control-label"></label>
+                <input asp-for="Adres" class="form-control" />
+                <span asp-validation-for="Adres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefon" class="control-label"></label>
+                <input asp-for="Telefon" class="form-control" />
+                <span asp-validation-for="Telefon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SirketId" class="control-label"></label>
+                <select asp-for="SirketId" class="form-control" asp-items="@sirketler">
+                    <option value="0">Şirket Seçiniz</option>
+                </select>
+                <span asp-validation-for="SirketId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SehirId" class="control-label"></label>
+                <select asp-for="SehirId" class="form-control" asp-items="@sehirler">
+                    <option value="0">Sehir Seçiniz</option>
+                </select>
+                <span asp-validation-for="SehirId" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Durum" /> @Html.DisplayNameFor(model => model.Durum)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

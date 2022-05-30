@@ -1,0 +1,107 @@
+﻿@model IEnumerable<EDCFinans.Models.Sozlesme.SozlesmeBireysel>
+
+@{
+    ViewData["Title"] = "SozlesmeBireysel_Listeleme";
+}
+
+<h1>SozlesmeBireysel_Listeleme</h1>
+
+<p>
+    <a asp-action="Create">Yeni Kayıt</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SozlesmeNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SirketId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YukleniciKisiId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SozlemeTurId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SozlesmeDurumId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaddeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImzaTarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BaslamaTarih)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BitisTarih)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.durum)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SozlesmeNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SirketId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YukleniciKisiId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SozlemeTurId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SozlesmeDurumId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaddeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImzaTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BaslamaTarih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BitisTarih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Aciklama)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.durum)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Durum Değiştir", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

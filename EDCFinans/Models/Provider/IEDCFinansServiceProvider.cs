@@ -1,0 +1,85 @@
+﻿using EDCFinans.Models.Finans;
+using EDCFinans.Request;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace EDCFinans.Models.Provider
+{
+    public interface IEDCFinansServiceProvider
+    {
+        Task<List<Depo>> DepoListele();
+        Task<Depo> DepoGetir(int id);
+        Task<Depo> DepoEkle(DepoEkle request);
+        Task<Depo> DepoDuzenle(DepoEkle request);
+        Task<List<Fatura>> FaturaListele();
+        Task<Fatura> FaturaGetir(int id);
+        Task<Fatura> FaturaEkle(FaturaEkle request);
+        Task<Fatura> FaturaDuzenle(FaturaEkle request);
+        Task<List<GelirGider>> GelirGiderListele();
+        Task<GelirGider> GelirGiderGetir(int id);
+        Task<GelirGider> GelirGiderEkle(GelirGiderEkle request);
+        Task<GelirGider> GelirGiderDuzenle(GelirGiderEkle request);
+        Task<List<GelirGiderTuru>> GelirGiderTuruListele();
+        Task<GelirGiderTuru> GelirGiderTuruGetir(int id);
+        Task<GelirGiderTuru> GelirGiderTurEkle(GelirGiderTuruEkle request);
+        Task<GelirGiderTuru> GeliGiderTuruDuzenle(GelirGiderTuruEkle request);
+        Task<List<Maas>> MaasListele();
+        Task<Maas> MaasGetir(int id);
+        Task<Maas> MaasEkle(MaasEkle request);
+        Task<Maas> MaasDuzenle(MaasEkle request);
+        Task<List<Meslek>> MeslekListele();
+        Task<Meslek> MeslekGetir(int id);
+        Task<Meslek> MeslekEkle(MeslekEkle request);
+        Task<Meslek> MeslekDuzenle(MeslekEkle request);
+        Task<List<ParaBirimi>> ParaBirimiListele();
+        Task<ParaBirimi> ParaBirimiGetir(int id);
+        Task<ParaBirimi> ParaBirimiEkle(ParaBirimiEkle request);
+        Task<ParaBirimi> ParaBirimiDuzenle(ParaBirimiEkle request);
+        Task<List<Personel>> PersonelListele();
+        Task<Personel> PersonelGetir(int id);
+        Task<Personel> PersonelEkle(PersonelEkle request);
+        Task<Personel> PersonelDuzenle(PersonelEkle request);
+        Task<List<Sehir>> SehirListele();
+        Task<Sehir> SehirGetir(int id);
+        Task<Sehir> SehirEkle(SehirEkle request);
+        Task<Sehir> SehirDuzenle(SehirEkle request);
+        Task<List<Siparis>> SiparisListele();
+        Task<Siparis> SiparisGetir(int id);
+        Task<Siparis> SiparisEkle(SiparisEkle request);
+        Task<Siparis> SiparisDuzenle(SiparisEkle request);
+        Task<List<SiparisDetay>> SiparisDetayListele();
+        Task<SiparisDetay> SiparisDetayGetir(int id);
+        Task<SiparisDetay> SiparisDetayEkle(SiparisDetayEkle request);
+        Task<SiparisDetay> SiparisDetayDuzenle(SiparisDetayEkle request);
+        Task<List<SiparisDurum>> SiparisDurumListele();
+        Task<SiparisDurum> SiparisDurumGetir(int id);
+        Task<SiparisDurum> SiparisDurumEkle(SiparisDurumEkle request);
+        Task<SiparisDurum> SiparisDurumDuzenle(SiparisDurumEkle request);
+        Task<List<Sirket>> SirketListele();
+        Task<Sirket> SirketGetir(int id);
+        Task<Sirket> SirketEkle(SirketEkle request);
+        Task<Sirket> SirketDuzenle(SirketEkle request);
+        Task<List<Stok>> StokListele();
+        Task<Stok> StokGetir(int id);
+        Task<Stok> StokEkle(StokEkle request);
+        Task<Stok> StokDuzenle(StokEkle request);
+        Task<List<Ulke>> UlkeListele();
+        Task<Ulke> UlkeGetir(int id);
+        Task<Ulke> UlkeEkle(UlkeEkle request);
+        Task<Ulke> UlkeDuzenle(UlkeEkle request);
+        Task<List<Urun>> UrunListele();
+        Task<Urun> UrunGetir(int id);
+        Task<Urun> UrunEkle(UrunEkle request);
+        Task<Urun> UrunDuzenle(UrunEkle request);
+        Task<List<UrunDetay>> UrunDetayListele();
+        Task<UrunDetay> UrunDetayGetir(int id);
+        Task<UrunDetay> UrunDetayEkle(UrunDetayEkle request);
+        Task<UrunDetay> UrunDetayDuzenle(UrunDetayEkle request);
+        Task<List<UrunKategori>> UrunKategoriListele();
+        Task<UrunKategori> UrunKategoriGetir(int id);
+        Task<UrunKategori> UrunKategoriEkle(UrunKategoriEkle request);
+        Task<UrunKategori> UrunKategoriDuzenle(UrunKategoriEkle request);
+    }
+}
